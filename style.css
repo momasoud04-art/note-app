@@ -1,0 +1,37 @@
+:root{
+  --bg:#f3f1ec; --surface:#ffffff; --ink:#1d2433; --muted:#6b7385;
+  --line:#e3e0d8; --accent:#2f5bea; --pin:#f5b83d; --danger:#d64545;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.app{width:100%;max-width:960px;margin:0 auto;padding:24px 16px 48px}
+.app-title{font-size:1.75rem;font-weight:700;margin-bottom:20px}
+.composer{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:32px}
+.composer input,.composer textarea{width:100%;font:inherit;color:inherit;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fbfaf7;resize:vertical}
+.composer input{font-weight:600}
+.composer input:focus,.composer textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.btn-add{align-self:flex-start;font:inherit;font-weight:600;color:#fff;background:var(--accent);border:0;border-radius:10px;padding:10px 22px;cursor:pointer}
+.btn-add:hover{filter:brightness(1.08)}
+.btn-add:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.group{margin-bottom:28px}
+.group-title{font-size:1.05rem;font-weight:600;color:var(--muted);margin-bottom:12px}
+.notes{display:grid;grid-template-columns:1fr;gap:14px;min-height:20px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.note.is-pinned{border-color:var(--pin);box-shadow:0 0 0 1px var(--pin) inset}
+.note h3{font-size:1.05rem;font-weight:700;overflow-wrap:anywhere}
+.note p{white-space:pre-wrap;overflow-wrap:anywhere;color:#3a4256}
+.note-actions{display:flex;gap:8px;margin-top:auto;padding-top:6px}
+.note-actions button{font:inherit;font-size:.9rem;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:4px 12px;cursor:pointer}
+.note-actions button:hover{background:#f3f1ec}
+.note-actions button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note-actions .delete{color:var(--danger)}
+.empty{color:var(--muted);font-size:.95rem}
+@media (min-width:768px){
+  .app{padding:40px 32px 64px}
+  .notes{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1200px){
+  .notes{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

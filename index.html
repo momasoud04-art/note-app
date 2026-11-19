@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تطبيق الملاحظات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1 class="app-title">ملاحظاتي</h1>
+
+    <form class="composer" id="note-form" autocomplete="off">
+      <input id="note-title" data-testid="note-title" type="text" placeholder="العنوان (اختياري)" aria-label="عنوان الملاحظة">
+      <textarea id="note-text" data-testid="note-text" rows="3" placeholder="اكتب ملاحظتك هنا..." aria-label="نص الملاحظة"></textarea>
+      <button type="submit" id="add-note" data-testid="add-note" class="btn-add">إضافة ملاحظة</button>
+    </form>
+
+    <section class="group" aria-labelledby="pinned-heading">
+      <h2 id="pinned-heading" class="group-title">المثبّتة</h2>
+      <div id="pinned-notes" data-testid="pinned-notes" class="notes"></div>
+    </section>
+
+    <section class="group" aria-labelledby="other-heading">
+      <h2 id="other-heading" class="group-title">الملاحظات</h2>
+      <div id="other-notes" data-testid="other-notes" class="notes"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
